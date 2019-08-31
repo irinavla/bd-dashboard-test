@@ -1,0 +1,48 @@
+.icon {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  &-arrow-left {
+    background-image: url('../assets/icons/arrow-left.svg');
+  }
+  &-arrow-right {
+    background-image: url('../assets/icons/arrow-right.svg');
+  }
+  &-bell {
+    background-image: url('../assets/icons/bell.svg');
+  }
+  &-calendar {
+    background-image: url('../assets/icons/calendar.svg');
+  }
+  &-checkmark {
+    background-image: url('../assets/icons/checkmark.svg');
+  }
+  &-chevron-down {
+    background-image: url('../assets/icons/chevron-down.svg');
+  }
+  &-close {
+    background-image: url('../assets/icons/close.svg');
+  }
+  &-computer {
+    background-image: url('../assets/icons/computer.svg');
+  }
+  &-edit {
+    background-image: url('../assets/icons/edit.svg');
+  }
+  &-feedback {
+    background-image: url('../assets/icons/feedback.svg');
+  }
+  &-plus-circle {
+    background-image: url('../assets/icons/plus-circle.svg');
+  }
+  &-rearrange {
+    background-image: url('../assets/icons/rearrange.svg');
+  }
+  &-refresh {
+    background-image: url('../assets/icons/refresh.svg');
+  }
+  &-settings {
+    background-image: url('../assets/icons/settings.svg');
+  }
+}

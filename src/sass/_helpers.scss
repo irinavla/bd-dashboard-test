@@ -1,0 +1,20 @@
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex {
+  display: flex;
+  &-h-center {
+    justify-content: center;
+  }
+  &-v-center {
+    align-items: center;
+  }
+  &-row {
+    flex-direction: row;
+  }
+  &-column {
+    flex-direction: column;
+  }
+}

@@ -1,6 +1,6 @@
-// convert px to ems
+/* === PX TO EMS CONVERTER === */
 
-$browser-context: 18; // Default
+$browser-context: 16; // Default
 
 @mixin fontSize($sizeValue: $browser-context) {
   font-size: ($sizeValue) + px;

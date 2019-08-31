@@ -1,0 +1,9 @@
+.content {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 3fr 21fr;
+  background-color: $baseGray;
+  padding-top: 54px;
+  min-height: 100vh;
+}

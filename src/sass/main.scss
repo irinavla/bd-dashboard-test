@@ -1,11 +1,28 @@
 @import 'variables';
 @import 'mixins';
+@import 'typography';
+@import 'helpers';
+@import 'header';
+@import 'sidebar';
+@import 'drawer';
+@import 'content';
+@import 'portlet';
 
-* {
+*, :after, :before {
 	box-sizing: border-box;
 }
 
 body {
-  background-color: $mediumGray;
-  	@include fontSize(13);
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  font-family: Arial, sans-serif;
+  @include fontSize(13);
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
 }

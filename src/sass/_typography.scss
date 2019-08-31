@@ -1,0 +1,18 @@
+.body-copy {
+  font-family: Arial;
+  @include fontSize(13);
+  line-height: 1.54;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+.text-small {
+  @include fontSize(12);
+  line-height: normal;
+}
+
+.text-bold {
+  font-weight: bold;
+}

@@ -1,0 +1,21 @@
+.portlet {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &-header {
+    height: 46px;
+    border-bottom: 1px solid #BABABA;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &-content {
+    
+  }
+
+  &-footer {
+    height: 46px;
+    background-color: $lightGray;
+  }
+}
