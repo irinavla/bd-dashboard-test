@@ -1,0 +1,8 @@
+// convert px to ems
+
+$browser-context: 18; // Default
+
+@mixin fontSize($sizeValue: $browser-context) {
+  font-size: ($sizeValue) + px;
+  font-size: ($sizeValue / $browser-context) + em;
+}

@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,CAAC,AAAC,CACD,UAAU,CAAE,UAAU,CACtB,AAED,AAAA,IAAI,AAAC,CACH,gBAAgB,CCLL,IAAO,CCElB,SAAS,CAAE,IAAiB,CAC5B,SAAS,CAAE,QAAoC,CFIhD",
+    "sources": [
+        "../../src/sass/main.scss",
+        "../../src/sass/_variables.scss",
+        "../../src/sass/_mixins.scss"
+    ],
+    "names": [],
+    "file": "main.min.css"
+}
