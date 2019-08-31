@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 54px;
-  background-color: $primary;
+  height: $headerHeight;
+  background-color: $primaryLighter;
   color: $white;
   display: flex;
   justify-content: center;
@@ -17,8 +17,57 @@
 
   .logo {
     padding-left: 20px;
+    padding-right: 10px;
   }
   .menu {
-    padding-right: 20px;
+    padding-left: 10px;
+    justify-content: space-between;
+  }
+
+  .item {
+    color: $white;
+    @include fontSize(13);
+    cursor: pointer;
+    &:first-child {
+      margin-right: 35px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+    }
+  }
+
+  .drawer-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .notifications {
+        position: relative;
+        height: $headerHeight;
+        padding: 0 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      .notifications-count {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        background-color: $primary;
+        color: $white;
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: bold;
+        vertical-align: middle; 
+      }
+      .icon {
+        width: 16px;
+        height: 18px;
+        opacity: .4;
+      }
+    }
   }
 }
