@@ -6,6 +6,8 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
+  margin: 20px 0;
+  color: #333333;
 }
 
 .text-small {
@@ -15,5 +17,17 @@
 
 .text-bold {
   font-weight: bold;
+}
+
+$colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'muted': $textMuted
+);
+
+@each $color, $hex in $colors {
+  .text-#{$color} {
+    color: $hex;
+  }
 }
 

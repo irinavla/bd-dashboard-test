@@ -1,0 +1,29 @@
+.collapsible {
+  cursor: pointer;
+  &.caret {
+    &:after {
+      content: '\002B';
+      color: $black;
+      font-size: fontSize(14px);
+      line-height: inherit;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      float: right;
+      margin-left: 5px;
+    }
+  }
+  &.active {
+    &.caret {
+      &:after {
+          content: "\2212";
+      }
+    }
+  }
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

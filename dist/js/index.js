@@ -15,8 +15,10 @@ collapsibles.forEach(function (collapsible) {
   var instance = new _utils.Collapsible(collapsible);
   instance.init();
 });
+var sideDrawer = new _utils.SideDrawer();
+sideDrawer.init();
 
-},{"./ui-components/utils":4}],2:[function(require,module,exports){
+},{"./ui-components/utils":5}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -72,6 +74,52 @@ exports["default"] = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports["default"] = exports.SideDrawer = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SideDrawer =
+/*#__PURE__*/
+function () {
+  function SideDrawer() {
+    _classCallCheck(this, SideDrawer);
+
+    this.trigger = document.querySelector('.drawer-toggle');
+    this.drawer = document.querySelector('.drawer');
+  }
+
+  _createClass(SideDrawer, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        _this.trigger.classList.toggle('active');
+
+        _this.drawer.classList.toggle('visible');
+      });
+    }
+  }]);
+
+  return SideDrawer;
+}();
+
+exports.SideDrawer = SideDrawer;
+var _default = SideDrawer;
+exports["default"] = _default;
+
+},{}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports["default"] = void 0;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -112,7 +160,7 @@ function () {
 var _default = Dropdown;
 exports["default"] = _default;
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -130,11 +178,19 @@ Object.defineProperty(exports, "Collapsible", {
     return _collapsible["default"];
   }
 });
+Object.defineProperty(exports, "SideDrawer", {
+  enumerable: true,
+  get: function get() {
+    return _drawer["default"];
+  }
+});
 
 var _dropdown = _interopRequireDefault(require("./_dropdown"));
 
 var _collapsible = _interopRequireDefault(require("./_collapsible"));
 
+var _drawer = _interopRequireDefault(require("./_drawer"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-},{"./_collapsible":2,"./_dropdown":3}]},{},[1]);
+},{"./_collapsible":2,"./_drawer":3,"./_dropdown":4}]},{},[1]);
