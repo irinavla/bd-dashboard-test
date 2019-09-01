@@ -18,12 +18,12 @@
 
 @media screen and (max-width: 1280px) {
   .main {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
   }
 }

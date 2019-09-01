@@ -2,6 +2,10 @@
   background-color: $white;
   border-right: 1px solid #BABABA;
   padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .top-menu {
@@ -31,6 +35,29 @@
         padding: 15px 20px 15px 40px;
       }
     }
+}
+
+.bottom-menu {
+  li {
+    a {
+      display: block;
+      font-size: fontSize(13px);
+      color: $mediumGray;
+      padding: 10px 20px;
+      background-color: transparent;
+      transition: all .3s ease;
+       &:hover {
+         background-color: $baseGray;
+       }
+
+      .icon {
+        width: 19px;
+        height: 19px;
+        vertical-align: middle;
+        margin-right: 12px;
+      }
+    }
+  }
 }
 
 .collapsible-content {

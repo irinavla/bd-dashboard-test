@@ -65,6 +65,10 @@
   background-image: url("../assets/icons/feedback.svg");
 }
 
+.icon-help {
+  background-image: url("../assets/icons/help.svg");
+}
+
 .icon-plus-circle {
   background-image: url("../assets/icons/plus-circle.svg");
 }
@@ -79,6 +83,10 @@
 
 .icon-settings {
   background-image: url("../assets/icons/settings.svg");
+}
+
+.icon-support {
+  background-image: url("../assets/icons/support.png");
 }
 
 .img-responsive {
@@ -326,6 +334,17 @@
   background-color: #FFFFFF;
   border-right: 1px solid #BABABA;
   padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .top-menu ul li a {
@@ -357,6 +376,27 @@
 .top-menu .menu > li a {
   font-size: 0.92857em;
   padding: 15px 20px 15px 40px;
+}
+
+.bottom-menu li a {
+  display: block;
+  font-size: 0.92857em;
+  color: #777777;
+  padding: 10px 20px;
+  background-color: transparent;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.bottom-menu li a:hover {
+  background-color: #EAEAEA;
+}
+
+.bottom-menu li a .icon {
+  width: 19px;
+  height: 19px;
+  vertical-align: middle;
+  margin-right: 12px;
 }
 
 .collapsible-content {
@@ -391,15 +431,15 @@
 
 @media screen and (max-width: 1280px) {
   .main {
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
