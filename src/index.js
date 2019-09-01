@@ -21,15 +21,19 @@ const sideDrawer = new SideDrawer();
 sideDrawer.init();
 
 
-const toastTrigger = document.querySelector('.edit-items');
+const editPortletTrigger = document.querySelector('.edit-items');
+const addPortletTrigger = document.querySelector('.add-item');
 const toast = document.querySelector('.toast');
 
 let showToast = () => {
   toast.classList.add('show');
-
+  console.log('trigger rearrange portlets');
   setTimeout(() => {
     toast.classList.remove('show');
   }, 4000);
 }
 
-toastTrigger.addEventListener('click', () => showToast());
+let addPortlet = () => console.log('trigger Add portlet action');
+
+editPortletTrigger.addEventListener('click', () => showToast());
+addPortletTrigger.addEventListener('click', () => addPortlet());

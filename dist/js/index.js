@@ -18,18 +18,27 @@ collapsibles.forEach(function (collapsible) {
 
 var sideDrawer = new _utils.SideDrawer();
 sideDrawer.init();
-var toastTrigger = document.querySelector('.edit-items');
+var editPortletTrigger = document.querySelector('.edit-items');
+var addPortletTrigger = document.querySelector('.add-item');
 var toast = document.querySelector('.toast');
 
 var showToast = function showToast() {
   toast.classList.add('show');
+  console.log('trigger rearrange portlets');
   setTimeout(function () {
     toast.classList.remove('show');
-  }, 3000);
+  }, 4000);
 };
 
-toastTrigger.addEventListener('click', function () {
+var addPortlet = function addPortlet() {
+  return console.log('trigger Add portlet action');
+};
+
+editPortletTrigger.addEventListener('click', function () {
   return showToast();
+});
+addPortletTrigger.addEventListener('click', function () {
+  return addPortlet();
 });
 
 },{"./ui-components/utils":5}],2:[function(require,module,exports){
@@ -148,7 +157,6 @@ function () {
   function Dropdown(container) {
     _classCallCheck(this, Dropdown);
 
-    this.container = container;
     this.trigger = container.querySelector('.dropdown-trigger');
     this.content = container.querySelector('.dropdown-content');
   }
@@ -164,6 +172,15 @@ function () {
         _this.content.classList.toggle('active');
 
         _this.trigger.classList.toggle('active');
+      });
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('.dropdown')) {
+          return;
+        }
+
+        _this.content.classList.remove('active');
+
+        _this.trigger.classList.remove('active');
       });
     }
   }]);
