@@ -14,9 +14,23 @@ var collapsibles = document.querySelectorAll('.collapsible');
 collapsibles.forEach(function (collapsible) {
   var instance = new _utils.Collapsible(collapsible);
   instance.init();
-});
+}); // create side drawer instance
+
 var sideDrawer = new _utils.SideDrawer();
 sideDrawer.init();
+var toastTrigger = document.querySelector('.edit-items');
+var toast = document.querySelector('.toast');
+
+var showToast = function showToast() {
+  toast.classList.add('show');
+  setTimeout(function () {
+    toast.classList.remove('show');
+  }, 3000);
+};
+
+toastTrigger.addEventListener('click', function () {
+  return showToast();
+});
 
 },{"./ui-components/utils":5}],2:[function(require,module,exports){
 "use strict";

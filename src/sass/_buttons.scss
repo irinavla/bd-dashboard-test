@@ -6,7 +6,7 @@
   border: none;
   display: inline-block;
   transition: all .3s ease;
-  
+  cursor: pointer;
   &.btn-primary {
     color: $primary;
     background-color: transparent;

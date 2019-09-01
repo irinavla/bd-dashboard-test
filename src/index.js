@@ -16,5 +16,20 @@ collapsibles.forEach(collapsible => {
   instance.init();
 })
 
+// create side drawer instance
 const sideDrawer = new SideDrawer();
 sideDrawer.init();
+
+
+const toastTrigger = document.querySelector('.edit-items');
+const toast = document.querySelector('.toast');
+
+let showToast = () => {
+  toast.classList.add('show');
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 4000);
+}
+
+toastTrigger.addEventListener('click', () => showToast());
