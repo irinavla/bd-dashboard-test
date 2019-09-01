@@ -47,6 +47,7 @@ pagination.init();
 // get portlets footer buttons
 let portlets = document.querySelectorAll('.portlet');
 
+// for each portlet item, target action and footer buttons, then iterate over each item and add an event listener
 portlets.forEach((portlet, index) => {
   let actions = portlet.querySelectorAll('.actions > button');
   let footerBtns = portlet.querySelectorAll('.portlet-footer > button');
@@ -58,5 +59,10 @@ portlets.forEach((portlet, index) => {
   footerBtns.forEach((btn, i) => {
     btn.addEventListener('click', () => console.log(`clicked footer button ${i} from portlet ${index}`));
   });
-
 });
+
+const loader = document.querySelector('.loader');
+
+setTimeout(() => {
+  loader.classList.add('hide');
+}, 1000);

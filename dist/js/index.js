@@ -45,7 +45,8 @@ addPortletTrigger.addEventListener('click', function () {
 var pagination = new _utils.Pagination(document.querySelector('.pagination'));
 pagination.init(); // get portlets footer buttons
 
-var portlets = document.querySelectorAll('.portlet');
+var portlets = document.querySelectorAll('.portlet'); // for each portlet item, target action and footer buttons, then iterate over each item and add an event listener
+
 portlets.forEach(function (portlet, index) {
   var actions = portlet.querySelectorAll('.actions > button');
   var footerBtns = portlet.querySelectorAll('.portlet-footer > button');
@@ -60,6 +61,10 @@ portlets.forEach(function (portlet, index) {
     });
   });
 });
+var loader = document.querySelector('.loader');
+setTimeout(function () {
+  loader.classList.add('hide');
+}, 3000);
 
 },{"./ui-components/utils":6}],2:[function(require,module,exports){
 "use strict";
@@ -194,7 +199,7 @@ function () {
         _this.trigger.classList.toggle('active');
       });
       document.addEventListener('click', function (e) {
-        if (e.target.closest('.dropdown')) {
+        if (e.target.closest('.dropdown-trigger')) {
           return;
         }
 

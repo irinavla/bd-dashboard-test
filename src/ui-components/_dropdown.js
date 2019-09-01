@@ -11,13 +11,13 @@ class Dropdown {
     });
 
     document.addEventListener('click', (e) => {
-      if (e.target.closest('.dropdown')) {
+      if (e.target.closest('.dropdown-trigger')) {
         return;
       }
 
       this.content.classList.remove('active');
       this.trigger.classList.remove('active');
-    })
+    });
   }
 }
 
