@@ -17,7 +17,8 @@ collapsibles.forEach(function (collapsible) {
 }); // create side drawer instance
 
 var sideDrawer = new _utils.SideDrawer();
-sideDrawer.init();
+sideDrawer.init(); // add actions for ADD & REARRANGE PORTLETS
+
 var editPortletTrigger = document.querySelector('.edit-items');
 var addPortletTrigger = document.querySelector('.add-item');
 var toast = document.querySelector('.toast');
@@ -27,7 +28,7 @@ var showToast = function showToast() {
   console.log('trigger rearrange portlets');
   setTimeout(function () {
     toast.classList.remove('show');
-  }, 4000);
+  }, 3000);
 };
 
 var addPortlet = function addPortlet() {
@@ -39,9 +40,12 @@ editPortletTrigger.addEventListener('click', function () {
 });
 addPortletTrigger.addEventListener('click', function () {
   return addPortlet();
-});
+}); // create pagination instance
 
-},{"./ui-components/utils":5}],2:[function(require,module,exports){
+var pagination = new _utils.Pagination(document.querySelector('.pagination'));
+pagination.init();
+
+},{"./ui-components/utils":6}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -197,6 +201,49 @@ exports["default"] = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports["default"] = exports.Pagination = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Pagination =
+/*#__PURE__*/
+function () {
+  function Pagination(container) {
+    _classCallCheck(this, Pagination);
+
+    this.prevPage = container.querySelector('.nav-left');
+    this.nextPage = container.querySelector('.nav-right');
+  }
+
+  _createClass(Pagination, [{
+    key: "init",
+    value: function init() {
+      this.prevPage.addEventListener('click', function () {
+        console.log('clicked prev page trigger');
+      });
+      this.nextPage.addEventListener('click', function () {
+        console.log('clicked next page trigger');
+      });
+    }
+  }]);
+
+  return Pagination;
+}();
+
+exports.Pagination = Pagination;
+var _default = Pagination;
+exports["default"] = _default;
+
+},{}],6:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 Object.defineProperty(exports, "Dropdown", {
   enumerable: true,
   get: function get() {
@@ -215,6 +262,12 @@ Object.defineProperty(exports, "SideDrawer", {
     return _drawer["default"];
   }
 });
+Object.defineProperty(exports, "Pagination", {
+  enumerable: true,
+  get: function get() {
+    return _pagination["default"];
+  }
+});
 
 var _dropdown = _interopRequireDefault(require("./_dropdown"));
 
@@ -222,6 +275,8 @@ var _collapsible = _interopRequireDefault(require("./_collapsible"));
 
 var _drawer = _interopRequireDefault(require("./_drawer"));
 
+var _pagination = _interopRequireDefault(require("./_pagination"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-},{"./_collapsible":2,"./_drawer":3,"./_dropdown":4}]},{},[1]);
+},{"./_collapsible":2,"./_drawer":3,"./_dropdown":4,"./_pagination":5}]},{},[1]);

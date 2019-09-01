@@ -9,21 +9,32 @@
 }
 
 .main {
-  padding: 10px 10px 20px 10px;
-  display: grid;
-  grid-template-columns: 7fr 7fr 7fr;
-  column-gap: 10px;
-  row-gap: 10px;
+  padding: 10px 10px 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .portlets {
+    display: grid;
+    grid-template-columns: 7fr 7fr 7fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    flex-basis: 100%;
+  }
 }
 
 @media screen and (max-width: 1280px) {
   .main {
-    grid-template-columns: 1fr 1fr;
+    .portlets {
+      grid-template-columns: 1fr 1fr;
+    }
+
   }
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    grid-template-columns: 1fr;
+    .portlets {
+      grid-template-columns: 1fr;
+    }
   }
 }

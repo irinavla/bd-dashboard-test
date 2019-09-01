@@ -1,4 +1,4 @@
-import { Dropdown, Collapsible, SideDrawer } from './ui-components/utils';
+import { Dropdown, Collapsible, SideDrawer, Pagination } from './ui-components/utils';
 
 // get all elements with 'dropdown' class and for each one create a new instance of the Dropdown class 
 const dropdowns = document.querySelectorAll('.dropdown');
@@ -20,7 +20,7 @@ collapsibles.forEach(collapsible => {
 const sideDrawer = new SideDrawer();
 sideDrawer.init();
 
-
+// add actions for ADD & REARRANGE PORTLETS
 const editPortletTrigger = document.querySelector('.edit-items');
 const addPortletTrigger = document.querySelector('.add-item');
 const toast = document.querySelector('.toast');
@@ -30,10 +30,15 @@ let showToast = () => {
   console.log('trigger rearrange portlets');
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 4000);
+  }, 3000);
 }
 
 let addPortlet = () => console.log('trigger Add portlet action');
 
 editPortletTrigger.addEventListener('click', () => showToast());
 addPortletTrigger.addEventListener('click', () => addPortlet());
+
+
+// create pagination instance
+const pagination = new Pagination(document.querySelector('.pagination'));
+pagination.init();
