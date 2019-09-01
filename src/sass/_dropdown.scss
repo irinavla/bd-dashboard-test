@@ -19,6 +19,10 @@
       opacity: 0.54;
       margin-left: 20px;
     }
+    &:hover,
+    &.active {
+      background-color: $primary;
+    }
   }
   &-content {
     min-width: 260px;
@@ -29,22 +33,20 @@
     box-shadow: 1px 1.7px 4px 0 rgba($black, 0.25);
     display: none;
     ul {
-      padding: 10px 30px 10px 20px;
       li {
         a {
           display: block;
           color: #444444;
-          padding: 10px 0;
+          background-color: $white;
+          padding: 15px 30px 15px 20px;
+          transition: all .3s ease;
+          &:hover {
+            background-color: $lightGray;
+          }
         }
       }
     }
-  }
-
-  &.active {
-    .dropdown-trigger {
-      background-color: $primary;
-    }
-    .dropdown-content {
+    &.active {
       display: block;
     }
   }

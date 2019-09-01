@@ -1,8 +1,13 @@
 /* === PX TO EMS CONVERTER === */
 
-$browser-context: 16; // Default
+// When calculating the breakpoint attributes, assumes the browser
+// has a base font-size of 14px
+$BROWSER-FONT-SIZE: 14px !default;
 
-@mixin fontSize($sizeValue: $browser-context) {
-  font-size: ($sizeValue) + px;
-  font-size: ($sizeValue / $browser-context) + em;
+
+@function fontSize($px) {
+	@if (unit($px) != "px") {
+		@error "Invalid unit for $px; expected 'px' but received '#{unit($px)}'";
+	}
+	@return (($px / $BROWSER-FONT-SIZE) * 1em);
 }

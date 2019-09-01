@@ -3,6 +3,24 @@
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: none;
   display: inline-block;
+  transition: all .3s ease;
+  
+  &.btn-primary {
+    color: $primary;
+    background-color: transparent;
+    &:hover {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+
+  &.btn-secondary {
+    color: $primary;
+    &:hover {
+      color: $white;
+      background-color: $secondary;
+    }
+  }
 }

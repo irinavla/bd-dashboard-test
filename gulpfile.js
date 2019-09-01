@@ -13,8 +13,8 @@ gulp.task('default', gulp.series(function (done) {
     .bundle()
     .pipe(source('index.js'))
     .pipe(gulp.dest('dist/js'))
-    .pipe(buffer())
-    .pipe(livereload());
+    .pipe(buffer());
+  // .pipe(livereload());
   done();
 }));
 

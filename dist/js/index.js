@@ -3,14 +3,70 @@
 
 var _utils = require("./ui-components/utils");
 
-// create dropdown instances
+// get all elements with 'dropdown' class and for each one create a new instance of the Dropdown class 
 var dropdowns = document.querySelectorAll('.dropdown');
 dropdowns.forEach(function (dropdown) {
   var instance = new _utils.Dropdown(dropdown);
   instance.init();
+}); // create collapsible instances
+
+var collapsibles = document.querySelectorAll('.collapsible');
+collapsibles.forEach(function (collapsible) {
+  var instance = new _utils.Collapsible(collapsible);
+  instance.init();
 });
 
-},{"./ui-components/utils":3}],2:[function(require,module,exports){
+},{"./ui-components/utils":4}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = exports.Collapsible = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Collapsible =
+/*#__PURE__*/
+function () {
+  function Collapsible(element) {
+    _classCallCheck(this, Collapsible);
+
+    this.trigger = element;
+    this.content = element.nextElementSibling;
+  }
+
+  _createClass(Collapsible, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        _this.trigger.classList.toggle('active');
+
+        if (_this.content.style.maxHeight) {
+          _this.content.style.maxHeight = null;
+        } else {
+          _this.content.style.maxHeight = _this.content.scrollHeight + "px";
+        }
+      });
+    }
+  }]);
+
+  return Collapsible;
+}();
+
+exports.Collapsible = Collapsible;
+var _default = Collapsible;
+exports["default"] = _default;
+
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32,6 +88,7 @@ function () {
 
     this.container = container;
     this.trigger = container.querySelector('.dropdown-trigger');
+    this.content = container.querySelector('.dropdown-content');
   }
 
   _createClass(Dropdown, [{
@@ -42,7 +99,9 @@ function () {
       this.trigger.addEventListener('click', function (e) {
         e.preventDefault();
 
-        _this.container.classList.toggle('active');
+        _this.content.classList.toggle('active');
+
+        _this.trigger.classList.toggle('active');
       });
     }
   }]);
@@ -53,7 +112,7 @@ function () {
 var _default = Dropdown;
 exports["default"] = _default;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65,9 +124,17 @@ Object.defineProperty(exports, "Dropdown", {
     return _dropdown["default"];
   }
 });
+Object.defineProperty(exports, "Collapsible", {
+  enumerable: true,
+  get: function get() {
+    return _collapsible["default"];
+  }
+});
 
 var _dropdown = _interopRequireDefault(require("./_dropdown"));
 
+var _collapsible = _interopRequireDefault(require("./_collapsible"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-},{"./_dropdown":2}]},{},[1]);
+},{"./_collapsible":2,"./_dropdown":3}]},{},[1]);

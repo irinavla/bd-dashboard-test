@@ -7,7 +7,54 @@
     height: 46px;
     border-bottom: 1px solid #BABABA;
     padding-left: 20px;
-    padding-right: 20px;
+    justify-content: space-between;
+
+    .title {
+      font-size: fontSize(16px);
+      line-height: 1;
+      color: #222222;
+
+      .icon {
+        width: 14px;
+        height: 12px;
+        vertical-align: middle;
+        margin-right: 15px;
+      }
+    }
+
+    .actions {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      .icon-btn {
+        width: 46px;
+        height: 100%;
+        text-align: center;
+        transition: all .3s ease;
+          &:hover {
+            background-color: $primary;
+            .icon {
+              // background-color: $white;
+            }
+          }
+        .icon {
+          margin: 0 auto;
+
+          &-refresh {
+            width: 18px;
+            height: 16px;
+          }
+          &-edit {
+            width: 16px;
+            height: 16px;
+          }
+          &-close {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
   }
 
   &-content {
@@ -16,6 +63,11 @@
 
   &-footer {
     height: 46px;
-    background-color: $lightGray;
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content: center;
+    .btn {
+      flex: 1;
+    }
   }
 }

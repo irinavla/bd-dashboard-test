@@ -3,6 +3,7 @@
 @import 'typography';
 @import 'icons';
 @import 'helpers';
+@import 'buttons';
 @import 'header';
 @import 'dropdown';
 @import 'sidebar';
@@ -19,7 +20,9 @@ body {
   padding: 0;
   background-color: $white;
   font-family: Arial, sans-serif;
-  @include fontSize(13);
+  font-size: fontSize(13px);
+  font-weight: normal;
+  font-style: normal;
 }
 
 button {
@@ -27,7 +30,7 @@ button {
   padding: 0;
   user-select: none;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: none;
   &:focus {
     outline: none;
   }
