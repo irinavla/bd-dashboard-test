@@ -11,6 +11,10 @@
 
 .flex {
   display: flex;
+  &-column {
+    flex-direction: column;
+    justify-content: center;
+  }
   &-v-center {
     justify-content: center;
   }
