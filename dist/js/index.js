@@ -64,7 +64,7 @@ portlets.forEach(function (portlet, index) {
 var loader = document.querySelector('.loader');
 setTimeout(function () {
   loader.classList.add('hide');
-}, 3000);
+}, 1000);
 
 },{"./ui-components/utils":6}],2:[function(require,module,exports){
 "use strict";
