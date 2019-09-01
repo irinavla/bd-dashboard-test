@@ -11,7 +11,7 @@ gulp.task('default', gulp.series(function (done) {
   return browserify('./src/index.js')
     .transform(babelify, { presets: ["@babel/preset-env"] })
     .bundle()
-    .pipe(source('index.js'))
+    .pipe(source('utils.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(buffer());
   // .pipe(livereload());
