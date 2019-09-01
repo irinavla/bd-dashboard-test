@@ -70,5 +70,14 @@
         opacity: .4;
       }
     }
+
+    &.active {
+      .notifications {
+        .icon {
+          opacity: 1;
+          background-image: url('../assets/icons/bell-active.svg');
+        }
+      }
+    }
   }
 }

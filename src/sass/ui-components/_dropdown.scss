@@ -18,10 +18,16 @@
       height: 7px;
       opacity: 0.54;
       margin-left: 20px;
+      transition: all .3s ease;
     }
     &:hover,
     &.active {
       background-color: $primary;
+    }
+    &.active {
+      .icon {
+        transform: rotate(180deg);
+      }
     }
   }
   &-content {
