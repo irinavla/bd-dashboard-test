@@ -43,7 +43,23 @@ addPortletTrigger.addEventListener('click', function () {
 }); // create pagination instance
 
 var pagination = new _utils.Pagination(document.querySelector('.pagination'));
-pagination.init();
+pagination.init(); // get portlets footer buttons
+
+var portlets = document.querySelectorAll('.portlet');
+portlets.forEach(function (portlet, index) {
+  var actions = portlet.querySelectorAll('.actions > button');
+  var footerBtns = portlet.querySelectorAll('.portlet-footer > button');
+  actions.forEach(function (action, i) {
+    action.addEventListener('click', function () {
+      return console.log("clicked action ".concat(i, " from portlet ").concat(index));
+    });
+  });
+  footerBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () {
+      return console.log("clicked footer button ".concat(i, " from portlet ").concat(index));
+    });
+  });
+});
 
 },{"./ui-components/utils":6}],2:[function(require,module,exports){
 "use strict";

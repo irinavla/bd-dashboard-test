@@ -42,3 +42,21 @@ addPortletTrigger.addEventListener('click', () => addPortlet());
 // create pagination instance
 const pagination = new Pagination(document.querySelector('.pagination'));
 pagination.init();
+
+
+// get portlets footer buttons
+let portlets = document.querySelectorAll('.portlet');
+
+portlets.forEach((portlet, index) => {
+  let actions = portlet.querySelectorAll('.actions > button');
+  let footerBtns = portlet.querySelectorAll('.portlet-footer > button');
+
+  actions.forEach((action, i) => {
+    action.addEventListener('click', () => console.log(`clicked action ${i} from portlet ${index}`));
+  });
+
+  footerBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => console.log(`clicked footer button ${i} from portlet ${index}`));
+  });
+
+});
